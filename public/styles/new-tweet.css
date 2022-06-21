@@ -1,0 +1,65 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: space-between;
+  color: #ffffff;
+  align-self: center;
+}
+
+#tweet-box {
+  width: 100%;
+  resize: none;
+  background-color: #8db5a3;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  border-bottom-width: 1px;
+  height: 100px;
+  padding: 10px;
+  font-size: 150%;
+  font-weight: bolder;
+}
+
+.humming {
+  font-size: 140%;
+  color: white;
+  text-align: center;
+  align-self: center;
+}
+
+.charcount-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: Bungee, sans-serif;
+  color: white;
+  padding-right: 10px;
+  font-size: 110%;
+  margin-top: 1em;
+}
+
+.tweet-button {
+  font-size: large;
+  background-color: #2c7855;
+  color: #ffffff;
+  border-radius: 15px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.alert {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1em;
+  border: dotted ;
+  border-radius: 25px;
+  padding: 0.5em;
+  font-size: 105%;
+  color: rgb(102, 255, 0);
+}
+
+.hide-tweet {
+  display: none;
+}
