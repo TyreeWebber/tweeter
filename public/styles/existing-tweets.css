@@ -1,0 +1,81 @@
+.existing-tweets {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid white;
+  padding: 8.5px;
+  font-size: 100%;
+  border-radius: 25px;
+  border-bottom-width: 1px;
+  border-block-color: #2C7855;
+  overflow-wrap: break-word;
+  word-break: unset;
+  margin-bottom: inherit;
+}
+
+.existing-tweets-container {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+}
+
+.existing-tweets-header  {
+  display: flex;
+  padding: 0.5em 0;
+}
+
+.user-name {
+  display: inline-block;
+  margin: 0 0.5rem;
+  font-size: larger;
+  align-self: center;
+}
+
+.user-handle {
+  display: inline-block;
+  margin: 0 0.5rem;
+  position: absolute; right: 0.5rem;
+  top: 25px;
+}
+
+.existing-tweets-body {
+  display: block;
+  text-align: center;
+  padding: 0.5em 0;
+  border-bottom: 1px solid #2C7855;
+  margin-bottom: 5px;
+}
+
+.existing-tweets-footer {
+  display: block;
+  padding: 0.5px;
+}
+
+.tweet-icons {
+
+  display: inline-block;
+  position: absolute; right: 0.5rem;
+  margin: 0 0.5rem;
+  color: #2C7855;
+  -webkit-text-stroke: 0.5px white;
+}
+
+.existing-tweets:hover {
+  box-shadow: 5px 5px #FED269;
+}
+
+#icon1:hover{
+  color: rgb(233, 35, 35);
+}
+
+#icon2:hover{
+  color: rgb(60, 60, 216);
+}
+
+  #icon3:hover{
+   color: rgb(235, 18, 119);
+  }
