@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const tweetMsg = createTweetElement(tweet);
@@ -31,4 +32,25 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
-renderTweets(data);
+const loadTweets = function() {
+  $.ajax({ url: '/tweets', method: 'GET' })
+    .then(result => renderTweets(result))
+    .catch(error => console.log(`Error:`, error));
+};
+
+let error = false;
+const submitHandler = function(event) {
+  event.preventDefault();
+  let tweetBox = $('#tweet-box').val();
+  const data = $(this).serialize();
+
+  const tweetPost = function(data) {
+    $.ajax({ url: '/tweets', method: 'POST', data: data }).then(() => {
+      $('.existing-tweets-container').empty();
+      $('#tweet-box').val('');
+      $('.alert').empty();
+      $('#counter').first().val(140);
+      loadTweets();
+    });
+  };
+};
