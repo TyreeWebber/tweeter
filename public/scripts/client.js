@@ -44,13 +44,13 @@ const loadTweets = function() {
   .catch(error => console.log(`Error:`, error));
 };
 
-const submitHandler = function (event) {
+const submitHandler = function(event) {
   event.preventDefault();
   let tweetBox = $("#tweet-box").val();
   const data = $(this).serialize();
 };
 
-  const tweetPost = function () {
+  const tweetPost = function() {
     $.ajax({ url: "/tweets", method: "POST", data: data }).then(() => {
       $(".existing-tweets-container").empty();
       $("#tweet-box").val("");
@@ -59,18 +59,24 @@ const submitHandler = function (event) {
       loadTweets();
     });
 
-  const errorHandler = function () {
-    if (tweetBox.length === 0) {
-      $(".alert").empty().append("<p>Your tweet needs to be at least 1 character long</p>");
-    }
-    if (tweetBox.length > 140) {
-      $(".alert").empty().append("<p>You've reached the max amount of characters</p>");
-    } else {
-      tweetPost(data);
-    }
+    const errorHandler = function() {
+      if (tweetBox.length === 0) {
+        $('.alert')
+          .empty()
+          .append('<p><i class="fas fa-exclamation-circle"></i><strong>Your tweet needs to be atleast 1 character long.</strong</p>');
+        $('.alert').hide().slideDown('slow');
+        error = true;
+      } else if (tweetBox.length > 140) {
+        $('.alert')
+          .empty()
+          .append('<p><i class="fas fa-exclamation-circle"></i><strong>You\'ve reached the max amount of characters!</strong></p>');
+        $('.alert').hide().slideDown('slow');
+        error = true;
+      } else {
+        tweetPost(data);
+        error = false;
+      }
+    };
+    errorHandler();
   };
-  errorHandler();
-};
-$("form").on("submit", submitHandler);
-loadTweets();
 
