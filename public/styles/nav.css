@@ -1,11 +1,12 @@
 nav {
-  background-color: #2C7855;
-  background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
-  color: white;
-  padding-left: 1.5em;
+  background-color: #2c7855;
+  background-image: url("https://www.transparenttextures.com/patterns/gradient-squares.png");
+  border-bottom: solid #2c7855;
+  padding-left: 15em;
   padding: 0.5em 1.5em;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-family: Source-Sans-Pro, Sans-Serif;
   z-index: 1;
   position:fixed;
@@ -13,9 +14,11 @@ nav {
   width: 100%;
 }
 
+  /* tweeter logo */
  #logo {
   font-family: Bungee, Sans-Serif;
-  font-size: 2em;
+  font-size: 200%;
+  color: white;
 }
 
 #bird {
@@ -23,14 +26,13 @@ nav {
   align-self: center;
   font-size: larger;
   color: white;
-  -webkit-text-stroke: 0.5px white;
+  -webkit-text-stroke: 2.5px white;
 }
 
 .nav-left {
   display: flex;
   align-items: flex-end;
 }
-
 .nav-right {
   display: flex;
   flex-direction: column;
@@ -45,7 +47,7 @@ nav {
   border: none; 
   color: white;
   background:  transparent;
-  cursor: pointer; 
+  cursor: grab; 
 }
 
 .nav-right:hover {
@@ -55,5 +57,5 @@ nav {
 }
 
 .arrow {
-  color: white;
-  }
+color: white;
+}

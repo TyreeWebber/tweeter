@@ -3,12 +3,12 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  border: 2px solid white;
+  border: 2px solid #2c7855;
   padding: 8.5px;
   font-size: 100%;
   border-radius: 25px;
   border-bottom-width: 1px;
-  border-block-color: #2C7855;
+  border-block-color: #2c7855;
   overflow-wrap: break-word;
   word-break: unset;
   margin-bottom: inherit;
@@ -46,7 +46,7 @@
   display: block;
   text-align: center;
   padding: 0.5em 0;
-  border-bottom: 1px solid #2C7855;
+  border-bottom: 1px solid #2c7855;
   margin-bottom: 5px;
 }
 
@@ -60,28 +60,22 @@
   display: inline-block;
   position: absolute; right: 0.5rem;
   margin: 0 0.5rem;
-  color: #2C7855;
-  -webkit-text-stroke: 0.5px white;
+  color: white;
+  -webkit-text-stroke: 0.5px #2c7855;
 }
 
 .existing-tweets:hover {
-  box-shadow: 5px 5px #FED269;
+  box-shadow: 5px 5px #2c7855;
 }
 
 #icon1:hover{
-  color: rgb(233, 35, 35);
+  color: red;
 }
 
 #icon2:hover{
-  color: rgb(60, 60, 216);
+  color: #2c7855;
 }
 
 #icon3:hover{
-  color: rgb(235, 18, 119);
-}
-
-.alert {
-  display: inline-block;
-  margin: 0 0.5rem;
-  color: #2C7855;
+ color: pink;
 }
