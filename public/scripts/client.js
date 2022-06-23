@@ -111,3 +111,28 @@ const topFunction = function() {
 $('#scroll-btn').on('click', () => {
   topFunction();
 });
+
+$('form').on('submit', submitHandler),
+$('#tweet-box').on('keyup', () => {
+  if (error === true) {
+    $('.alert').slideUp('slow');
+    error = false;
+  }
+});
+
+$('#create-tweet').on('click', () => {
+  $('.alert').hide();
+  if ($('#new-tweet').hasClass('hide-tweet')) {
+    $('#new-tweet').slideDown('slow', function() {
+      $(this).removeClass('hide-tweet');
+      $('.alert').empty();
+    });
+  } else {
+    $('#new-tweet').slideUp('slow', function() {
+      $(this).addClass('hide-tweet');
+      $('.alert').empty();
+    });
+  }
+});
+
+loadTweets();
