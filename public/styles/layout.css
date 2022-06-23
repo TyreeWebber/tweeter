@@ -3,10 +3,13 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+
+ html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -15,23 +18,136 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
+  color: #ffffff;
+  background-color: #2C7855;
+  background-image: url("https://www.transparenttextures.com/patterns/light-honeycomb.png");
+  font-size: 100%;
   font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 span.logo {
-font-family: "Bungee", cursive;
+  font-family: "Bungee", cursive;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  font-size: 100%;
+  width: 100%;
+  background-color: #2C7855;
+  justify-content: center;
+  align-self: center;
+}
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
- 
- .container {
-  width: 90%;
-  background-color: #e9deb0 ;
-  margin: 0;
-} 
+#scroll-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  background-color: #2C7855;
+  background-image: url("https://www.transparenttextures.com/patterns/light-honeycomb.png");
+  border-radius: 60%;
+  color: white;
+  cursor: pointer;
+  padding: 25px;
+}
+
+@media screen and (min-width: 730px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    background-color: #2C7855;
+    background-image: url("https://www.transparenttextures.com/patterns/light-honeycomb.png");
+  }
+
+  main {
+    margin-top: 5em;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://www.transparenttextures.com/patterns/light-honeycomb.png");
+  }
+
+  #main-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 3em;
+    min-width: 320px;
+    max-width: 30vw;
+  }
+
+  .avatar {
+    height: auto;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  .new-tweet {
+    width: 100%;
+    margin-top: 2em;
+  }
+
+  .existing-tweets {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-self: center;
+    width: 100%;
+    margin-top: 1em;
+
+  }
+
+  .existing-tweets.body {
+    background-color: #2C7855;
+  }
+}
+
+#scroll-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  background-color: #FED269;
+  background-image: url("https://www.transparenttextures.com/patterns/light-honeycomb.png");
+  border-radius: 60%;
+  color: white;
+  cursor: pointer;
+  padding: 25px;
+}
+
+.avatar {
+  height: auto;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.new-tweet {
+  width: 100%;
+  margin-top: 2em;
+}
+
+.existing-tweets {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-self: center;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.existing-tweets.body {
+  background-color: black;
+}

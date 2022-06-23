@@ -76,6 +76,12 @@
   color: rgb(60, 60, 216);
 }
 
-  #icon3:hover{
-   color: rgb(235, 18, 119);
-  }
+#icon3:hover{
+  color: rgb(235, 18, 119);
+}
+
+.alert {
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: #2C7855;
+}
