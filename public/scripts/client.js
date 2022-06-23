@@ -11,6 +11,12 @@ const renderTweets = function(tweets) {
   }
 };
 
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = function(tweet) {
   const timeStamp = timeago.format(tweet.created_at);
   let $tweet = `<article class="existing-tweets">
@@ -33,24 +39,33 @@ const createTweetElement = function(tweet) {
 };
 
 const loadTweets = function() {
-  $.ajax({ url: '/tweets', method: 'GET' })
-    .then(result => renderTweets(result))
-    .catch(error => console.log(`Error:`, error));
+  $.ajax({ url: "/tweets", method: "GET" })
+  .then(result => renderTweets(result))
+  .catch(error => console.log(`Error:`, error));
 };
 
-let error = false;
-const submitHandler = function(event) {
+const submitHandler = function (event) {
   event.preventDefault();
-  let tweetBox = $('#tweet-box').val();
+  let tweetBox = $("#tweet-box").val();
   const data = $(this).serialize();
 
-  const tweetPost = function(data) {
-    $.ajax({ url: '/tweets', method: 'POST', data: data }).then(() => {
-      $('.existing-tweets-container').empty();
-      $('#tweet-box').val('');
-      $('.alert').empty();
-      $('#counter').first().val(140);
-      loadTweets();
-    });
+  const tweetPost = function () {
+    $.ajax({ url: "/tweets", method: "POST", data: data })
+    .then($(".existing-tweets-container").empty(),loadTweets(), $('#tweet-box').val(''));
   };
+
+  const errorHandler = function () {
+    if (tweetBox.length === 0) {
+      $(".alert").empty().append("<p>Your tweet needs to be at least 1 character long</p>");
+    }
+    if (tweetBox.length > 140) {
+      $(".alert").empty().append("<p>You've reached the max amount of characters</p>");
+    } else {
+      tweetPost(data);
+    }
+  };
+  errorHandler();
 };
+$("form").on("submit", submitHandler);
+loadTweets();
+
