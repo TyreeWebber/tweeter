@@ -48,11 +48,16 @@ const submitHandler = function (event) {
   event.preventDefault();
   let tweetBox = $("#tweet-box").val();
   const data = $(this).serialize();
+};
 
   const tweetPost = function () {
-    $.ajax({ url: "/tweets", method: "POST", data: data })
-    .then($(".existing-tweets-container").empty(),loadTweets(), $('#tweet-box').val(''));
-  };
+    $.ajax({ url: "/tweets", method: "POST", data: data }).then(() => {
+      $(".existing-tweets-container").empty();
+      $("#tweet-box").val("");
+      $(".alert").empty();
+      $("#counter").first().val(140);
+      loadTweets();
+    });
 
   const errorHandler = function () {
     if (tweetBox.length === 0) {
