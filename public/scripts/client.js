@@ -5,7 +5,7 @@
  */
 
 $(document).ready(function() {
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     for (const tweet of tweets) {
       const tweetMsg = createTweetElement(tweet);
       $('.existing-tweets-container').prepend(tweetMsg);
@@ -90,3 +90,24 @@ const tweetPost = function() {
   };
   errorHandler();
 };
+
+const scrollButton = document.getElementById("scroll-btn");
+window.onscroll = function() {
+  scrollFunction();
+};
+
+const scrollFunction = function() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollButton.style.display = "block";
+  } else {
+    scrollButton.style.display = "none";
+  }
+};
+
+const topFunction = function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+};
+$('#scroll-btn').on('click', () => {
+  topFunction();
+});
