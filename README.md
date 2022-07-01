@@ -10,17 +10,11 @@ This is a project by [Tyree Webber](https://github.com/TyreeWebber) and was crea
 
 ## Final Product
 ---
-!["Screenshot of responsive design with textbox open"](https://github.com/TyreeWebber/tweeter/blob/master/public/images/screenshots/responsive%20design%20with%20textbox.png)
+!["Screenshot of desktop Tweeter"](https://github.com/TyreeWebber/tweeter/blob/master/public/images/screenshots/desktop.png)
 
-!["Screenshot of responsive design without textbox open"](https://github.com/TyreeWebber/tweeter/blob/master/public/images/screenshots/responsive%20design%20without%20textbox.png)
+!["Screenshot of mobile Tweeter with max error"](https://github.com/TyreeWebber/tweeter/blob/master/public/images/screenshots/desktop_error.png)
 
-!["Screenshot of Tweeter with max character error displayed"](https://github.com/TyreeWebber/tweeter/blob/master/public/images/screenshots/tweeter%20max%20character%20error.png)
-
-!["Sceenshot of Tweeter with min character error displayed"](https://github.com/TyreeWebber/tweeter/blob/master/public/images/screenshots/tweeter%20min%20character%20error.png)
-
-!["Screenshot of Tweeter with new tweet box displayed"](https://github.com/TyreeWebber/tweeter/blob/master/public/images/screenshots/tweeter%20new%20tweet.png)
-
-!["Screenshot of Tweeter with existing tweets/tweet box hidden"](https://github.com/TyreeWebber/tweeter/blob/master/public/images/screenshots/tweeter%20no%20textbox.png)
+!["Screenshot of desktop Tweeter with min error"](https://github.com/TyreeWebber/tweeter/blob/master/public/images/screenshots/mobile_error.png)
 
 ## Dependencies
 ---
@@ -78,20 +72,6 @@ This is a project by [Tyree Webber](https://github.com/TyreeWebber) and was crea
 ## [client.js](https://github.com/TyreeWebber/tweeter/blob/master/public/scripts/client.js)
 
 - Contains all client-side logic for the project
----
-- loadTweets: used to submit a GET request to the /tweets/ route to receive the array of posted tweets, also empties and resets the form.
-
-- createTweetElement: renders HTML markup for a tweet. uses template literals to dynamically insert user inputs.
-
-- renderTweets: accepts an array of objects containing the tweeter user's data, also prepends items to the DOM.
-
-- escape: escapes XSS scripts
-
-- errorHandler: checks for input field errors and if an error is present gives an error message, if not allows the tweet to be posted.
-
-- scrollFunction: when the use user scrolls more than 30px it prompts a button to appear.
-
-- topFunction: appears when the user scrolls more than 30px if clicked it returns the user to the top of the page body.
 
 ## [composer-char-counter.js](https://github.com/TyreeWebber/tweeter/blob/master/public/scripts/composer-char-counter.js)
 - updates the counter as the tweet is written. Listens for user inputs to increase/decrease the counter.
