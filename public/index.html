@@ -6,13 +6,18 @@
   <title>Tweeter - Home Page</title>
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
   <!-- Custom Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -28,7 +33,9 @@
   <script type="text/javascript" src="/scripts/client.js"></script>
 
   <!-- Timeago -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="./scripts/client.js"></script>
@@ -39,51 +46,43 @@
 <body>
   <!-- Top nav bar -->
   <nav>
-    <div class="nav-left">
-      <span id="logo">tweeter</span>
-      <i id="bird" class="fab fa-twitter"></i>
-    </div>
-    <div class="nav-right">
-      <br />
-      <button type="button" id="create-tweet">Create a new tweet</button>
-      <i class="fas fa-angle-double-down arrow"></i>
+    <span>tweeter</span>
+    <div class="compose">
+      <p><strong>Write</strong> a new tweet!</p>
+      <i class="fas fa-arrow-circle-down"></i>
     </div>
   </nav>
-  
-  <!-- Header -->
-  <header id="main-header">
-    <div class="avatar" class="name-text">
-      <h2>TonyHawkFan12</h2>
-        <img src="/images/profile-hex.png"> 
-      <br/>
+  <header class="pageHeader">
+    <div>
+      <img src="/images/profile-hex.png">
+    </div>
+    <br>
+    <div>
+      <h2>Tyree Webber</h2>
     </div>
   </header>
+  <br>
 
   <!-- Page-specific (main) content here -->
-  <main class="container"></main>
 
-  <!-- New Tweet -->
-  <section id="new-tweet" class="new-tweet hide-tweet">
-    <div class="humming">
-    <h3><strong><i>What are you humming about?</i></strong></h3>
-    </div>
-    <form id="submit" method="POST" action="tweets/">
-      <textarea name="text" id="tweet-box"></textarea>
-      <div class="charcount-text">
-        <button class="tweet-button" type="submit">Tweet</button>
-        <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
-      </div>
-  
-  <!-- Error -->
-  <div class="alert"></div>
-
-   <!-- Existing Tweets-->
-   <section class="existing-tweets-container">
-  </section>
-    <button id="scroll-btn" title="Scroll to top" class="scroll-btn">
-      <i class="fas fa-angle-double-up"></i>
-    </button>
-
+  <main class="container">
+    <section class="new-tweet">
+      <p class="error-length">You've reached the max acount of characters!</p>
+      <p class="error-empty">Your tweet needs to be atleast 1 character long.</p>
+      <form action="/tweets/" method=POST class="tweet-form">
+        <label for="tweet-text"><b>What are you humming about?</b></label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div>
+          <br>
+          <div class="button-counter">
+            <button class="button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text"><b>140</b></output>
+          </div>
+        </div>
+      </form>
+    </section>
+    <br>
+    <section class="tweets-container">
+    </section>
   </main>
 </body>
-</html>

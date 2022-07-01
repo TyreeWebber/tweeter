@@ -2,69 +2,65 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  justify-content: space-between;
-  color: #ffffff;
-  align-self: center;
-}
-
-/* tweet input text box */
-#tweet-box {
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  resize: none;
-  background-color: #2c7855;
-  color: white;
-  text-align: center;
-  border-radius: 25px;
-  border-bottom-width: 1px;
-  height: 100px;
-  padding: 10px;
-  font-size: 150%;
-  font-weight: bolder;
+  margin-top: 160px;
 }
 
-/* "what are you humming about?" */
-.humming {
-  font-size: 120%;
-  color: white;
-  text-align: center;
-  align-self: center;
+form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-/* character count */
-.charcount-text {
+textarea {
+  border-style: none;
+  background-color: #82b39c;
+  border-bottom-style: solid;
+  border-bottom-width: 7px;
+  width: 100%;
+  resize:none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.button-counter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: Bungee, sans-serif;
-  color: white;
-  padding-right: 10px;
-  font-size: 110%;
-  margin-top: 1em;
 }
 
-/* tweet button */
-.tweet-button {
-  font-size: large;
-  background-color: #2c7855;
-  color: #ffffff;
-  border-radius: 15px;
-  padding: 3px;
-  cursor: grab;
-}
-
-.alert {
-  justify-content: center;
+button {
+  display: flex;
   align-items: center;
-  text-align: center;
-  margin-top: 1em;
-  border: solid ;
-  border-radius: 25px;
-  padding: 0.5em;
-  font-size: 105%;
-  color: #2c7855;
+  background-color: #2c7855;
+  color: white;
+  font-family: 'Bungee', cursive;
+  font-size: 20px;
+  border-color: #2c7855;
+  border-style: none;
 }
 
-.hide-tweet {
+.error-length {
+  border: 1px dotted red;
+  color: red;
   display: none;
+  padding: 5px;
+}
+
+.error-empty{
+  border: 1px dotted red;
+  color: red;
+  display: none;
+  padding: 5px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    margin-top: 160px;
+  }
 }

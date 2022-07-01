@@ -1,16 +1,18 @@
-$(document).ready(function() {
-  $("#tweet-box").on("input", function (event) {
-    let $formInput = $(this);
-    let $forms = $formInput.closest("form");
-    let $textCount = $forms.find("#tweet-box");
-    let textLength = $textCount.val().length;
-    let charLeft = 140 - textLength;
-    let counterColor = $("#counter").val(charLeft);
+$(document).ready(function () {
+  $("#tweet-text").on('input', function () {
+    const $input = $(this);
+    const form = $input.closest('form');
+    const counter = form.find('.counter');
+    const charsLeft = (140 - $input.val().length);
 
-    if (charLeft < 0) {
-      counterColor.css("color", "red");
+    counter.html(charsLeft);
+
+    if (charsLeft < 0) {
+      counter.addClass("addColour");
     } else {
-      counterColor.css("color", "white");
+      counter.removeClass("addColour");
+      $(".error-length").slideUp();
+      $(".error-empty").slideUp();
     }
   });
 });
