@@ -29,9 +29,6 @@
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
-
   <!-- Timeago -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
     integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
@@ -62,14 +59,12 @@
     </div>
   </header>
   <br>
-
   <!-- Page-specific (main) content here -->
-
   <main class="container">
     <section class="new-tweet">
       <p class="error-length">You've reached the max acount of characters!</p>
       <p class="error-empty">Your tweet needs to be atleast 1 character long.</p>
-      <form action="/tweets/" method=POST class="tweet-form">
+      <form action="/tweets" method="post" class="tweet-form">
         <label for="tweet-text"><b>What are you humming about?</b></label>
         <textarea name="text" id="tweet-text"></textarea>
         <div>
